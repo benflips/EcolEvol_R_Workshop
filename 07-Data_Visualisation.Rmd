@@ -160,14 +160,14 @@ Now we're at the point where we have a layer of the graph whose aesthetic charac
 #   geom_smooth(method = "lm") +
 #   scale_y_log10()
 
-# Experiment with the additional options you can use to customise the `geom_oint()` and `geom_smooth()` layer. There is no set challenge, just experiment with different options. Consider changing the point/line size, transparency, linetype, etc.
+# Experiment with the additional options you can use to customise the `geom_point()` and `geom_smooth()` layer. There is no set challenge, just experiment with different options. Consider changing the point/line size, transparency, linetype, etc.
 ```
 
 ## Multi-panel figures
 
-So far we have visualised the relationships between variables in a single plot. Alternatively, we can split out different groups in the data into multiple panels by adding a layer of **facet** panels. The `facet_grid()` and `facet_wrap()` layers do this wit slightly different amounts of control, but for now we can stick with `facet_grid()`. We need to specify which variable we want to split the plots by by supplying it as a formula like `~variable_name`.
+So far we have visualised the relationships between variables in a single plot. Alternatively, we can split out different groups in the data into multiple panels by adding a layer of **facet** panels. The `facet_grid()` and `facet_wrap()` layers do this with slightly different amounts of control, but for now we can stick with `facet_grid()`. We need to specify which variable we want to split the plots by by supplying it as a formula like `~variable_name`.
 
-This time lets look at the relationship `Sex` and `Survived` as a bar plot using `geom_bar()` (the `position = dodge` argument means have them side by side not stacked). First as a single plot:
+This time lets look at the relationship `Sex` and `Survived` as a bar plot using `geom_bar()` (the `position = dodge` argument means have them side by side not stacked). First, as a single plot:
 
 ```{r warning = FALSE}
 ggplot(data = titanic_clean,
@@ -273,7 +273,7 @@ ggsave("images/My_Plot.jpg",
        units = "cm")
 ```
 
-An alternative is to use one of the variety of image file creation functions available in `R` like `png()`, `jpeg()`, or `pdf()`. These functions will open a new file of that specific type, add to it anything that you plot, and then needs to be specifically told to close and save the file using the `dev.off()` function. This is the ideal method of doing so since it gives you greater control over the file generation process, including the ability to save multiple plots to a single file (depending on file type chosen). Unless you have a **very** good reason why not to, always use the `pdf()` function here for plots since it saves as a vector graphic so it can be rescaled in the future without pixellation problems.
+An alternative is to use one of the variety of image file creation functions available in `R` like `png()`, `jpeg()`, or `pdf()`. These functions will open a new file of that specific type, add to it anything that you plot, and then needs to be specifically told to close and save the file using the `dev.off()` function. This is the ideal method of outputting graphics since it gives you greater control over the file generation process, including the ability to save multiple plots to a single file (depending on file type chosen). Unless you have a **very** good reason why not to, always use the `pdf()` function here for plots since it saves as a vector graphic so it can be rescaled in the future without pixellation problems.
 
 ```{r eval=FALSE}
 pdf("images/My_Plot.pdf",

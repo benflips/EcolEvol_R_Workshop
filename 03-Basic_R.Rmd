@@ -12,9 +12,9 @@ The simplest thing you could do with `R` is do arithmetic:
 
 If you type in an incomplete command, `R` will wait for you to complete it. If the symbol to the left of the bottom line in the console is `>` then `R` is ready to accept a new command, while a `+` means it is waiting for you to finsh the previous command.
 
-If you want to cancel a command you can simply hit `Esc` and RStudio will give you back the ">" prompt (or `Ctrl+C` for a Mac). This is a useful tip to remember if you ever get stuck in a `+` loop in the console!
+If a command is taking a long time to execute, you may want to cancel it.  To do this simply hit `Esc` and RStudio will give you back the ">" prompt (or `Ctrl+C` for a Mac). This is a useful tip to remember if you ever get stuck in a `+` loop in the console!
 
-When using `R` as a calculator, the order of operations is the same as you would have learnt back in school.
+When using `R` as a calculator, the order of operations is the same as you would have learnt back in school (though **R** has a few additional operators to those you learned in school).
 
 From highest to lowest precedence:
 

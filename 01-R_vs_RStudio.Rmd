@@ -36,12 +36,11 @@ The default layout of these four panes are:
 
 There are two main ways one can work within RStudio.
 
-+  Test and play within the interactive `R` console then copy code into
-  +  a `.R` file to run later. 
+1.  Test and play within the interactive `R` console then copy code into a `.R` file to run later. 
      +  This works well when doing small tests and initially starting off.
      +  It quickly becomes laborious
-+  Start writing in an `.R` file and use `RStudio`'s command / short cut to push current line, selected lines or modified lines to the interactive `R` console. 
-  +  This is a great way to start; all your code is saved for later
-  +  You will be able to run the file you create from within `RStudio` or using `R`'s `source()` function.
+2.  Start writing in an `.R` file and use `RStudio`'s command / short cut to push current line, selected lines or modified lines to the interactive `R` console. 
+    +  This is a great way to start; all your code is saved for later
+    +  You will be able to run the file you create from within `RStudio` or using `R`'s `source()` function.
 
 <hr class="double">

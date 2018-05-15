@@ -16,16 +16,14 @@ It is best to keep all files associated with a given project (like a PhD chapter
 +  A clear, easily navigatable directory structure makes finding specific files easier
 +  You don't accidently lose an important file for your analysis because you kept it somewhere else
 
-That said, there is no single best way to organise a file system. The key is to make sure that your chosen directory structure and the location of the files therein is consistent, informative, and, most importantly, works for you.
+That said, there is no single best way to organise a file system. The key is to make sure that your chosen directory structure (and the location of the files therein) is consistent, informative, and, most importantly, that it works for you.
 
 An example directory structure (for a `MyProject` root directory) might include the following:
 
-+  A `data` folder that contains all input data (and associated metadata) for the analysis. This is then potentially split further into:
-  +  A `raw` folder for your raw data files. These should never be modified so it is best to keep them separate.
-  +  A `clean` folder for your cleaned up versions of your raw data files.
++  A `data` folder that contains all input data (and associated metadata) for the analysis. 
 +  A `doc`  or `reports` folder for any manuscripts. This can include the manuscript submitted to a journal for publication, reports for a funding body like a government or NGO, or some markdown files documenting the steps of the analysis. You may wish to sub-divide this folder to include these different types or, alternatively, include both a `docs` and `reports` folder
 +  A `figs` or `images` folder for any graphs and figures generated in the analysis
-+  An `output` folder to store any type of intermediate or output files. This could include model objects, simulations, etc. Some people prefer to store their cleaned data here instead of in a sub-directory of `data`
++  An `output` folder to store any type of intermediate or output files. This could include model objects, simulations, etc. 
 + A `scripts` folder to store the code scripts used in the analysis
 
 ```{r}
@@ -65,8 +63,8 @@ A script is essentially a text file that `R` recognises as containing `R` code a
 
 Just like there is no single correct way of structuring a directory, there is no single correct way of structuring a script. It is up to you to settle on a structure that works for you. Some things to consider using:
 
-+  A title and "script abstract" at the top of the script saying what the script is for and how it does it.
-+  Use headings/subheadings to make navigating between sections easier. These will obviously depend on what the script is doing, but common ones include `Load Packages`, `Load Data`, `Data Manipulation`, `Model Fitting`, `Plotting`, and `Save Outputs`.
++  A title and "script abstract" at the top of the script saying what the script is for, who wrote it, and how it does it.
++  Use headings/subheadings to make navigating between sections easier. These will obviously depend on what the script is doing, but common ones might include `Load Packages`, `Load Data`, `Data Manipulation`, `Model Fitting`, `Plotting`, and `Save Outputs`.
 +  Have any loaded packages called at the beginning of the script. This avoids some of the issues that may arise from function masking, and makes it easy for anyone else using the script to identify the packages they need to install.
 +  Comment your code! Add comments to your code to remind you not only *what* you've done but *why* you've done it that way. If you come back to a script from six months ago it will be much easier to remember what you've done.
 
@@ -85,7 +83,7 @@ Another thing that makes reading a code script easier is the use of a style guid
 +  `<-` instead of `=` for variable assignment
 +  A line length of <80 characters. This is more of a rule of thumb not hard and fast, but the idea is to keep from having to scroll across to read a full command
 +  Whitespace. `R` will ignore all whitespace in your code except for between a function name and it's opening parenthesis i.e. `mean (1,2)`, and inside object names. Make use of it to make the code readable (e.g. on either side of an operator `1 + 2`) but don't add it in unnecessarily.
-+  Multi-line function calls. `R` recognises that a function call is not finished if the line ends in a comma, so you can add each argument in a function to a new line to make it fit on a page. E.g.
++  Multi-line function calls. `R` recognises that a function call is not finished if the line ends in a comma, so you can add each argument in a function to a new line to make it fit on a page. For example,
 ```{r eval=FALSE}
 sum(1:100,
     na.rm = TRUE)

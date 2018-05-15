@@ -47,7 +47,7 @@ vec2 <- c("apple", 2.1, TRUE)
 vec3 <- c(2, 2.0, 2L)
 ```
 
-You can try to force coercion against this flow using the `as.*()` functions. Not everything is possible, but it useful to remember for if data is read in incorrectly by `R` (like numerics as a character string).
+You can try to force coercion against this flow using the `as.*()` functions. Not everything is possible, but it useful to remember for when data are interpreted incorrectly by `R` (like numerics as a character string).
 
 ```{r}
 as.numeric(c('0','2','4'))
@@ -69,15 +69,15 @@ As you can see, some surprising things can happen when `R` forces one basic data
 
 Now that we understand *data types* it is time to move on to the *data structures* that `R` uses to store data. The three data structures we will cover in this course are vectors, data frames, and lists. There are other data structures (like matrices and arrays) that we wont cover, but similar principles apply.
 
-+  Vectors are a one-dimensional sequence of data elements. Every element in a vector must be the same data type or it will undergo type coercion
-+  Lists are a collection of elements. Each element can be any type of `R` object (vector, data frame, a single value, even another list).
-+  Data frames are a two-dimensional table of data elements. Each column is a vector (so must be the same data type), while each row is a list (so can contain different data types)
++  A Vector is a one-dimensional sequence of data elements. Every element in a vector must be the same data type or it will undergo type coercion
++  A List is a collection of elements. Each element can be any type of `R` object (vector, data frame, a single value, even another list).
++  A Data Frames is a special kind of list, where each element in the list is a vector of the same length as all the others.  Because of this property, it can be represented as a two-dimensional table of data elements (that looks just like a spreadsheet full of data). Each column is a vector (so must be the same data type), while each row is a list (so can contain different data types).
 
 ### Vectors
 
 We've alredy covered how to create a basic vector, so now we will cover how to manipulate the vector.
 
-The `c()` function can also append things to an existing vector:
+The `c()` function (c for "concatenate") can also append things to an existing vector:
 
 ```{r}
 ab_vector <- c('a', 'b')
@@ -178,7 +178,7 @@ name_vec[c("a", "b")]
 
 ## Lists
 
-While everything in a vector has to be the same data type, a list is a really useful data structure to know since you can fill it with anything.
+While everything in a vector has to be the same data type, a list is a really useful data structure, because you can fill it with anything.
 
 ```{r}
 list_example <- list(1, "a", TRUE, 1+4i)
@@ -251,7 +251,7 @@ Each column in a data frame is a vector (same data type), and each row is a list
 str(cats)
 ```
 
-We can begin exploring our dataset right away, pulling out columns and rows or combinations thereof. To extract a single column from the data you use the `$` operator with this syntax `data_name$column_name`.
+We can begin exploring our dataset right away, pulling out columns and rows or combinations thereof. To extract a single column from the data you use the `$` operator with this syntax `data_name$column_name`.  Because data frames are lists, you can also use list notation, e.g., `cats[[1]]`.
 
 ```{r}
 cats$weight
@@ -287,6 +287,12 @@ cats[ , 2]
 ## Extract the value for the second row in the third column
 
 cats[2, 3]
+```
+
+You can also extract subsets of a data frame using column names, e.g., 
+
+```{r}
+cats[ , "coat"]
 ```
 
 To highlight the difference vectors and lists, lets try and add a new row of data to the `cats` data frame.
@@ -341,7 +347,7 @@ levels(cats$coat) <- c(levels(cats$coat), "marmalade")
 levels(cats$coat)
 ```
 
-While factors are essential for statistical modelling they can't be a nuisance in other instances. `R` will load all character data as factors by default, but we can tell it not to.
+While factors are essential for statistical modelling they can't be a real nuisance in other instances. `R` will load all character data as factors by default, but we can tell it not to.
 
 ```{r}
 ####################
